@@ -1,115 +1,148 @@
-@import 'https://fonts.googleapis.com/css?family=Lato:400,700';
-*{
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+
+* {
 }
+
 body {
-    background-color: #FFF8F8;
+    position: relative;
     font-family: 'Lato', Helvetica, sans-serif;
+    background-image: linear-gradient(0deg, rgba(188,255,189,0.2),rgba(147,130,240,0.5)),url('https://ajoals.com/wp-content/themes/ajoals/css/img/hp-bg1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     line-height: 1.6em;
+    min-height: 100vh;
     font-size: 16px;
-    font-weight:300;
+    font-weight: 300;
     margin: auto;
-    overflow: hidden;
+    color: white;
 }
+
+.container {
+    top: 0;
+    margin: 0 auto;
+    max-width: 70rem;
+    min-height: 100vh;
+    width: 100%;
+}
+
 .main-header {
     display: flex;
     justify-content: space-between;
     margin: 0;
     min-height: 5rem;
-    background-color: #C9EEAB;
+    /*background-color: #C9EEAB;*/
     box-sizing: border-box;
-    border: 1px solid #bab7b7;
+    border-bottom: 1px solid #bab7b7;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-#main-logo{
-    margin:auto;
-    align-self:center;
+
+#main-logo {
+    margin: auto;
+    align-self: center;
     margin-left: 5rem;
 }
+
 #navbar {
     font-size: 1.2rem;
-    color: black;
+    color: white;
     width: 50%;
     margin: auto;
 }
+
 .nav-container {
-    
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     align-items: center;
 }
+
 .navbar-links ul {
     display: flex;
     list-style: none;
-    text-decoration:none;
+    text-decoration: none;
     color: black;
 }
-    .navbar-links ul a{
-        font-weight: 500!important;
+
+    .navbar-links ul a {
+        font-weight: 500 !important;
         list-style: none;
-        position:relative;
-        text-decoration:none;
-        color: black;
+        position: relative;
+        text-decoration: none;
+        color: white;
         margin-right: 1.5rem;
     }
+
         .navbar-links ul a::after {
             content: "";
             display: block;
             position: absolute;
             width: 100%;
-            background: black;
-            height: 1px;
+            background: white;
+            height: 2px;
             opacity: 0;
             transition: opacity 300ms, transform 300ms;
         }
+
         .navbar-links ul a:hover::after,
         .navbar-links ul a:focus::after {
             opacity: 1;
             transform: translate3d(0, 0.2em, 0);
         }
-        .navbar-links ul li a::after {
-            opacity: 1;
-            transform: scale(0);
-            transform-origin: center;
 
-        }
+    .navbar-links ul li a::after {
+        opacity: 1;
+        transform: scale(0);
+        transform-origin: center;
+    }
 
-        .navbar-links ul li a:hover::after,
-        .navbar-links ul li a:focus::after {
-             transform: scale(1);
-        }
+    .navbar-links ul li a:hover::after,
+    .navbar-links ul li a:focus::after {
+        transform: scale(1);
+    }
 
-
-.nav-buttons{
-    width: 15rem;
+.nav-buttons {
+    position: relative;
+    width: 20rem;
     height: 3.5rem;
-    border: 2px solid #eee;
-    background-color: #b6bdc9;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
-    padding: 3px
+    padding: 3px;
 }
-.login-button {
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
-    background-color: #1859c9;
-    color: white;
-    padding: 0.4rem;
-    margin-right:.9rem;
-    border-radius: .4rem;
-    width: 6.8rem;
-    height: 2.9rem;
+
+    .nav-buttons button {
+        font-size: 1.2rem;
+        border: 1px solid white;
+        cursor: pointer;
+        color: white;
+        padding: 0.4rem;
+        background-color:transparent;
+        margin-right: .9rem;
+        border-radius: .4rem;
+        width: 6.4rem;
+        height: 2.4rem;
+        transition: all 0.5s;
+    }
+
+        .nav-buttons button:hover {
+            background-color: #C1D3AB;
+            color: black;
+            border:none;
+        }
+
+.main-footer {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 5rem;
+    background-color: rgba(60,56,82,0.92);
+    bottom: 0;
+    color: #f0f9ff;
+    background-color: #282d32;
 }
-.register-button {
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
-    background-color: #e9ecf0;
-    color: white;
-    padding: 0.4rem;
-    border-radius: .4rem;
-    width: 6.8rem;
-    height: 2.9rem;
+
+.footer-div {
 }
