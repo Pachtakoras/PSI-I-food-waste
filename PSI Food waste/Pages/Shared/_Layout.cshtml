@@ -15,10 +15,10 @@
 <body>
     <header class="main-header">
         <div id="main-logo">
-            <a href="https://www.fontspace.com/category/modern"><img src="https://see.fontimg.com/api/renderfont4/1GMDg/eyJyIjoiZnMiLCJoIjo0MywidyI6MTAwMCwiZnMiOjQzLCJmZ2MiOiIjQ0I4NzRBIiwiYmdjIjoiIzAzMDIwMiIsInQiOjF9/Rm9vZFdhc3Rl/conformity-personal-use-regular.png" alt="Modern fonts"></a>
+            <a asp-page="/Index"><img src="https://see.fontimg.com/api/renderfont4/1GMDg/eyJyIjoiZnMiLCJoIjo0MywidyI6MTAwMCwiZnMiOjQzLCJmZ2MiOiIjQ0I4NzRBIiwiYmdjIjoiIzAzMDIwMiIsInQiOjF9/Rm9vZFdhc3Rl/conformity-personal-use-regular.png" alt="Modern fonts"></a>
         </div>
 
-            <nav id="navbar">
+        <nav id="navbar">
             <div class="nav-container">
                 @*<a class="navbar-logo" asp-area="" asp-page="/Index">Food waste</a>*@
                 <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -41,12 +41,13 @@
                 @{
                     if (ViewData["User"] != null)
                     {
-                        <h6 class="col-sm-1">@ViewData["User"]</h6>
-                        <form>
-                            <button class="btn btn-danger" asp-page="/Forms/LogoutScreen">Logout</button>
-                        </form>
+                        <div class="nav-buttons">
+                            <label id="username">Welcome @ViewData["User"]!</label>
+                            <form>
+                                <button id="logout-btn" asp-page="/Forms/LogoutScreen">Logout</button>
+                            </form>
+                        </div>
                     }
-
                     else
                     {
                         <div class="nav-buttons">

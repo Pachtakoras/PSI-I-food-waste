@@ -111,13 +111,17 @@ body {
     padding: 3px;
 }
 
+    .nav-buttons #username {
+        margin-right: .4rem;
+    }
+
     .nav-buttons button {
         font-size: 1.2rem;
         border: 1px solid white;
         cursor: pointer;
         color: white;
         padding: 0.4rem;
-        background-color:transparent;
+        background-color: transparent;
         margin-right: .9rem;
         border-radius: .4rem;
         width: 6.4rem;
@@ -128,8 +132,13 @@ body {
         .nav-buttons button:hover {
             background-color: #C1D3AB;
             color: black;
-            border:none;
+            border: none;
         }
+
+    .nav-buttons #logout-btn:hover {
+        background-color: #F46060;
+        border: none;
+    }
 
 .main-footer {
     position: absolute;
@@ -144,5 +153,10 @@ body {
     background-color: #282d32;
 }
 
-.footer-div {
+.footer-div, .footer-div a {
+    color: white;
 }
+
+    .footer-div a:hover {
+        opacity: .7;
+    }
