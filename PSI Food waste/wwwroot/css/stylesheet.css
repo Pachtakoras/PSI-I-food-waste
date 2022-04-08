@@ -1,18 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+@import url('https://fonts.googleapis.com/css2?family=Ingrid+Darling&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ingrid+Darling&family=Oswald:wght@700&display=swap');
 
 * {
+    box-sizing: border-box;
 }
 
 body {
     position: relative;
     font-family: 'Lato', Helvetica, sans-serif;
-    background-image: linear-gradient(0deg, rgba(188,255,189,0.2),rgba(147,130,240,0.5)),url('https://ajoals.com/wp-content/themes/ajoals/css/img/hp-bg1.jpg');
+    background-image: linear-gradient(0deg, rgba(188,255,189,0.2),rgba(147,130,240,0.5)),url('https://www.teahub.io/photos/full/41-419298_background-image-for-restaurant-website.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     line-height: 1.6em;
-    min-height: 100vh;
+    /*    height:100vh;*/
     font-size: 16px;
     font-weight: 300;
     margin: auto;
@@ -41,7 +44,7 @@ body {
 #main-logo {
     margin: auto;
     align-self: center;
-    margin-left: 5rem;
+    margin-left: 10rem;
 }
 
 #navbar {
@@ -72,6 +75,10 @@ body {
         color: white;
         margin-right: 1.5rem;
     }
+
+        .navbar-links ul a:hover {
+            opacity: .7;
+        }
 
         .navbar-links ul a::after {
             content: "";
@@ -123,14 +130,13 @@ body {
         padding: 0.4rem;
         background-color: transparent;
         margin-right: .9rem;
-        border-radius: .4rem;
         width: 6.4rem;
         height: 2.4rem;
         transition: all 0.5s;
     }
 
         .nav-buttons button:hover {
-            background-color: #C1D3AB;
+            background-color: #7AE166;
             color: black;
             border: none;
         }
@@ -160,3 +166,142 @@ body {
     .footer-div a:hover {
         opacity: .7;
     }
+
+.index-display {
+    font-family: 'Ingrid Darling', cursive;
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.2rem;
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+
+.main-page {
+    width: 100%;
+    margin: auto;
+    margin-top: 8rem;
+}
+
+.box-container {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.box-wrapper {
+}
+
+.main-buttons {
+    font-size: 1.3rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+    background-color: #81CF72;
+    padding: 0.4rem;
+    width: 16.4rem;
+    height: 3.1rem;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+   
+}
+
+    .main-buttons:hover {
+        background-color: #7DC36F;
+        transform: translateY(-7px);
+    }
+
+.desc {
+    text-align:center;
+    margin:auto;
+    width: 27ch;
+    font-size: 1.8rem;
+    line-height: 3.4rem;
+}
+
+.btn-description {
+    font-family: 'Ingrid Darling', cursive;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+
+.page-header {
+    font-family: 'Ingrid Darling', cursive;
+    font-family: 'Oswald', sans-serif;
+    word-spacing: 0.2rem;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+.page-content{
+    text-align:center;
+}
+/*Login page*/
+.login-form {
+    margin: auto;
+    width: 35%;
+    height: 24rem;
+    background: white;
+    background-color: rgba(60,56,82,0.92);
+    text-align: center;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 8rem;
+}
+
+    .login-form p {
+        font-size: 0.9rem;
+        color: #797777;
+    }
+
+        .login-form p a {
+            color: #797777;
+        }
+
+            .login-form p a:hover {
+                color: #c8c1c1;
+            }
+
+.form {
+    font-size: 1.4rem;
+    color: white;
+}
+
+.control-label {
+    font-weight: 400;
+}
+
+.form-control {
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1rem;
+    border: none;
+    margin: .5rem 0 .5rem 0;
+    padding-left: .4rem;
+}
+
+.button-wrapper {
+    margin: auto;
+    width: 100%;
+}
+
+.confirm-buttom {
+    font-size: 1.5rem;
+    color: black;
+    border: none;
+    width: 100%;
+    background-color: #7DC36F;
+    height: 2.5rem;
+    margin-top: 1rem;
+    cursor:pointer;
+}
+
+    .confirm-buttom:hover {
+        background-color: #28ca3f;
+    }
+
+.form-group {
+    margin-top: .2rem;
+}
+.login {
+    height: 31rem;
+}

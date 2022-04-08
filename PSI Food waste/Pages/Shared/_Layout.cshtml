@@ -9,13 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - PSI_Food_waste</title>
     @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/stylesheet.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/stylesheet.css")"/>
     @RenderSection("Styles", false)
 </head>
 <body>
     <header class="main-header">
         <div id="main-logo">
-            <a asp-page="/Index"><img src="https://see.fontimg.com/api/renderfont4/1GMDg/eyJyIjoiZnMiLCJoIjo0MywidyI6MTAwMCwiZnMiOjQzLCJmZ2MiOiIjQ0I4NzRBIiwiYmdjIjoiIzAzMDIwMiIsInQiOjF9/Rm9vZFdhc3Rl/conformity-personal-use-regular.png" alt="Modern fonts"></a>
+            @*<a asp-page="/Index"><img src="https://see.fontimg.com/api/renderfont4/1GMDg/eyJyIjoiZnMiLCJoIjo0MywidyI6MTAwMCwiZnMiOjQzLCJmZ2MiOiIjQ0I4NzRBIiwiYmdjIjoiIzAzMDIwMiIsInQiOjF9/Rm9vZFdhc3Rl/conformity-personal-use-regular.png" alt="Modern fonts"></a>*@
+            <a asp-page="/Index"><img src="https://see.fontimg.com/api/renderfont4/w1OB8/eyJyIjoiZnMiLCJoIjo0MywidyI6MTAwMCwiZnMiOjQzLCJmZ2MiOiIjMzcyOTFDIiwiYmdjIjoiIzAzMDIwMiIsInQiOjF9/Rm9vZFdhc3Rl/millenia-personal-use.png" alt="Cursive fonts"></a>
         </div>
 
         <nav id="navbar">
@@ -68,13 +69,11 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="main-footer">
         <div class="footer-div">
             &copy; 2021 - PSI_Food_waste - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
