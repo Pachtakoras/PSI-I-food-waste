@@ -260,7 +260,19 @@ body {
             .login-form p a:hover {
                 color: #c8c1c1;
             }
-
+.input{
+    position:relative;
+}
+.input i{
+    position:absolute;
+}
+.icon {
+    background: transparent;
+    color: #969494;
+    min-width: 20px;
+    top:1rem;
+    right: 0.8rem;
+}
 .form {
     font-size: 1.4rem;
     color: white;
@@ -277,6 +289,7 @@ body {
     border: none;
     margin: .5rem 0 .5rem 0;
     padding-left: .4rem;
+    padding-right: 2.6rem;
 }
 
 .button-wrapper {
@@ -300,7 +313,7 @@ body {
     }
 
 .form-group {
-    margin-top: .2rem;
+    margin-top: .15rem;
 }
 .login {
     height: 31rem;
