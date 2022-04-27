@@ -15,7 +15,7 @@
         <option value="Panevežys">Panevežys</option>
         <option value="Šiauliai">Šiauliai</option>
     </select>
-    <button style="height:30px;" class="btn btn-primary">Filter</button>
+    <button class="btn btn-primary">Filter</button>
 </form>
 
 @{
@@ -31,18 +31,9 @@
     @foreach (var productGroup in productsByRestaurant)
     {
         <div class="card">
-            @*<button class="btn-primary">View</button>
-                <button class="btn-primary">Subscribe</button>*@
-            <div class="card-img" style="        background-image: url('@productGroup.Key.PictureUrl');
-            height: 330px;
-            vertical-align: bottom;
-            background-position: center; /* Center the image */
-            background-repeat: no-repeat; /* Do not repeat the image */
-            background-size: cover; /* Resize the background image to cover the entire container */
-            opacity: .8;
-             ">
+            <div class="card-img" style="background-image: url('@productGroup.Key.PictureUrl')">
             </div>
-            <div class="card-body" style="height:200px">
+            <div class="card-body">
                 <h4>@productGroup.Key.Title</h4>
                 @*<form>
                         <label class="col-sm-8 align-items-sm-start" style="font-size:170%;">@productGroup.Key.Title</label>
@@ -59,7 +50,7 @@
                 @*<label class="col-sm-9" style="color:black; font-size:140%;">@productGroup.Key.Title</label>*@
                 <div class="btn-sm">
                     <form method="post" asp-page-handler="Select" asp-route-id="@productGroup.Key.Id">
-                        <button class="btn btn-primary">View</button>
+                        <button class="view-button">View</button>
                     </form>
                 </div>
                 
@@ -88,7 +79,6 @@
                     }
                     else
                     {
-                        <p>Login to subscribe</p>
                     }
             </div>
             </div>

@@ -9,17 +9,18 @@
 body {
     position: relative;
     font-family: 'Lato', Helvetica, sans-serif;
-    background-image: linear-gradient(0deg, rgba(188,255,189,0.2),rgba(147,130,240,0.5)),url('https://www.teahub.io/photos/full/41-419298_background-image-for-restaurant-website.jpg');
+    /*background-image: linear-gradient(0deg, rgba(188,255,189,0.2),rgba(147,130,240,0.5)),url('https://www.teahub.io/photos/full/41-419298_background-image-for-restaurant-website.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
+    background-color: #F6F6F6;
     background-attachment: fixed;
     line-height: 1.6em;
     /*    height:100vh;*/
     font-size: 16px;
     font-weight: 300;
     margin: auto;
-    color: white;
+    color: #333;
 }
 
 .container {
@@ -38,7 +39,7 @@ body {
     /*background-color: #C9EEAB;*/
     box-sizing: border-box;
     border-bottom: 1px solid #bab7b7;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 29px 0px;
 }
 
 #main-logo {
@@ -49,7 +50,7 @@ body {
 
 #navbar {
     font-size: 1.2rem;
-    color: white;
+    color: black;
     min-width: 50%;
     margin: auto;
 }
@@ -59,7 +60,8 @@ body {
     justify-content: flex-end;
     align-items: center;
 }
-@media (max-width:800px){
+
+@media (max-width:800px) {
     .nav-container, .navbar-links, .main-header {
         display: flex;
         flex-direction: column;
@@ -67,13 +69,14 @@ body {
         margin: auto;
         justify-content: center;
     }
+
     #main-logo {
         margin: auto;
         align-self: center;
-        margin:auto;
+        margin: auto;
     }
-
 }
+
 .navbar-links ul {
     display: flex;
     list-style: none;
@@ -86,12 +89,12 @@ body {
         list-style: none;
         position: relative;
         text-decoration: none;
-        color: white;
+        color: black;
         margin-right: 1.5rem;
     }
 
         .navbar-links ul a:hover {
-            opacity: .7;
+            opacity: .8;
         }
 
         .navbar-links ul a::after {
@@ -99,7 +102,7 @@ body {
             display: block;
             position: absolute;
             width: 100%;
-            background: white;
+            background: black;
             height: 2px;
             opacity: 0;
             transition: opacity 300ms, transform 300ms;
@@ -138,9 +141,9 @@ body {
 
     .nav-buttons button {
         font-size: 1.2rem;
-        border: 1px solid white;
+        border: 1px solid black;
         cursor: pointer;
-        color: white;
+        color: #333;
         padding: 0.4rem;
         background-color: transparent;
         margin-right: .9rem;
@@ -150,8 +153,8 @@ body {
     }
 
         .nav-buttons button:hover {
-            background-color: #7AE166;
-            color: black;
+            background-color: #90D0FC;
+            color: white;
             border: none;
         }
 
@@ -188,20 +191,32 @@ body {
     color: white;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
-
+.index-img {
+    position: absolute;
+    top: 10rem;
+    z-index:-1;
+    left:0;
+    width: 100%;
+    height: 50rem;
+    background-image: url(/Images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .main-page {
     width: 100%;
     margin: auto;
-    margin-top: 8rem;
+    margin-top: 10rem;
 }
 
 .box-container {
-    display: flex;
+    display: block;
     margin: auto;
-    justify-content: space-around;
+    margin-left: 3rem;
 }
 
 .box-wrapper {
+   
 }
 
 .main-buttons {
@@ -210,13 +225,12 @@ body {
     cursor: pointer;
     border-radius: 5px;
     color: black;
-    background-color: #81CF72;
+    background-color: #90D0FC;
     padding: 0.4rem;
     width: 16.4rem;
     height: 3.1rem;
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
-   
 }
 
     .main-buttons:hover {
@@ -225,8 +239,8 @@ body {
     }
 
 .desc {
-    text-align:center;
-    margin:auto;
+    text-align: center;
+    margin: auto;
     width: 27ch;
     font-size: 1.8rem;
     line-height: 3.4rem;
@@ -236,18 +250,17 @@ body {
     font-family: 'Ingrid Darling', cursive;
     font-family: 'Oswald', sans-serif;
     font-size: 1.6rem;
-    text-align: center;
-    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
+    margin-left: 0.8rem;
 }
 
 .page-header {
     font-family: 'Ingrid Darling', cursive;
     font-family: 'Oswald', sans-serif;
     word-spacing: 0.2rem;
-    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
-.page-content{
-    text-align:center;
+
+.page-content {
+    text-align: left;
 }
 /*Login page*/
 .login-form {
@@ -255,8 +268,9 @@ body {
     max-width: 26rem;
     /*width: 35%;*/
     height: 24rem;
+    border: 1px #DCDFE3 solid;
     background: white;
-    background-color: rgba(60,56,82,0.92);
+    background-color: white;
     text-align: center;
     border-radius: 16px;
     padding: 2rem;
@@ -275,19 +289,23 @@ body {
             .login-form p a:hover {
                 color: #c8c1c1;
             }
-.input{
-    position:relative;
+
+.input {
+    position: relative;
 }
-.input i{
-    position:absolute;
-}
+
+    .input i {
+        position: absolute;
+    }
+
 .icon {
     background: transparent;
     color: #969494;
     min-width: 20px;
-    top:1rem;
+    top: 1rem;
     right: 0.8rem;
 }
+
 .form {
     font-size: 1.4rem;
     color: white;
@@ -305,6 +323,7 @@ body {
     margin: .5rem 0 .5rem 0;
     padding-left: .4rem;
     padding-right: 2.6rem;
+    background-color: #DFEDFF !important;
 }
 
 .button-wrapper {
@@ -317,19 +336,65 @@ body {
     color: black;
     border: none;
     width: 100%;
-    background-color: #7DC36F;
+    background-color: #90D0FC;
     height: 2.5rem;
     margin-top: 1rem;
-    cursor:pointer;
+    cursor: pointer;
 }
 
     .confirm-buttom:hover {
-        background-color: #28ca3f;
+        
     }
 
 .form-group {
     margin-top: .15rem;
 }
+
 .login {
     height: 31rem;
+}
+/*RestaurantList page*/
+.card-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.card {
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+}
+
+    .card .card-body {
+        height: 200px;
+    }
+
+    .card .card-img {
+        height: 330px;
+        border-radius: 10px;
+        vertical-align: bottom;
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+    }
+
+.card-body h4 {
+    text-align:left;
+    font-weight:bold;
+    font-size:1.3rem;
+    margin-left:.4rem;
+}
+.view-button {
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    width: 8rem;
+    background-color: #7DC36F;
+    height: 2.5rem;
+    margin-top: 1rem;
+    margin:auto;
+    cursor: pointer;
+    border-radius:5px;
 }
