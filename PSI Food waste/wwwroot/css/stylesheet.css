@@ -9,27 +9,30 @@
 body {
     position: relative;
     font-family: 'Lato', Helvetica, sans-serif;
-    /*background-image: linear-gradient(0deg, rgba(188,255,189,0.2),rgba(147,130,240,0.5)),url('https://www.teahub.io/photos/full/41-419298_background-image-for-restaurant-website.jpg');
+    background-image: linear-gradient(0deg, rgba(188,255,189,0.2),rgba(147,130,240,0.5)),url('https://www.teahub.io/photos/full/41-419298_background-image-for-restaurant-website.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;*/
+    background-size: cover;
     background-color: #F6F6F6;
     background-attachment: fixed;
     line-height: 1.6em;
-    /*    height:100vh;*/
     font-size: 16px;
     font-weight: 300;
     margin: auto;
     color: #333;
+    min-height: 100vh;
 }
 
 .container {
-    top: 0;
     margin: 0 auto;
+    margin-bottom: 1.5rem;
     max-width: 70rem;
-    width: 100%;
     min-height: 100vh;
 }
+
+    .container .pb-3 {
+        bottom: 5rem;
+    }
 
 .main-header {
     display: flex;
@@ -164,7 +167,6 @@ body {
     }
 
 .main-footer {
-    position: absolute;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -355,20 +357,23 @@ body {
 }
 /*RestaurantList page*/
 .card-columns {
+    margin-top: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .card {
     border: 1px solid black;
-    background-color: black;
+    background-color: #999999;
     border-radius: 10px;
-    color: white;
+    color: black;
 }
 
     .card .card-body {
         height: 200px;
+        line-height: 1.5rem;
+        font-weight: 600;
     }
 
     .card .card-img {
