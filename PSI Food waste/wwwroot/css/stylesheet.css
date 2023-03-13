@@ -9,10 +9,10 @@
 body {
     position: relative;
     font-family: 'Lato', Helvetica, sans-serif;
-    background-image: linear-gradient(0deg, rgba(188,255,189,0.2),rgba(147,130,240,0.5)),url('https://www.teahub.io/photos/full/41-419298_background-image-for-restaurant-website.jpg');
+    /*background-image: linear-gradient(0deg, rgba(188,255,189,0.2),rgba(147,130,240,0.5)),url('https://www.teahub.io/photos/full/41-419298_background-image-for-restaurant-website.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
     background-color: #F6F6F6;
     background-attachment: fixed;
     line-height: 1.6em;
@@ -23,15 +23,29 @@ body {
     min-height: 100vh;
 }
 
+.index-img {
+    position: absolute;
+    top: 5rem;
+    z-index:-1;
+    left:0;
+    width: 100%;
+    height: 60rem;
+    background-image: url(/Images/hero-image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .container {
-    margin: 0 auto;
-    margin-bottom: 1.5rem;
-    max-width: 70rem;
-    min-height: 100vh;
+    display: flex;
+    min-height: 60rem;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
 }
 
     .container .pb-3 {
-        bottom: 5rem;
+        min-width: 70%;
     }
 
 .main-header {
@@ -168,18 +182,18 @@ body {
 
 .main-footer {
     display: flex;
+    align-items: flex-end;
     text-align: center;
     justify-content: center;
     width: 100%;
     min-height: 5rem;
-    background-color: rgba(60,56,82,0.92);
+    --tw-bg-opacity: 1;
     bottom: 0;
-    color: #f0f9ff;
-    background-color: #282d32;
+    background-color: #e5e5ef;
 }
 
 .footer-div, .footer-div a {
-    color: white;
+    color: black;
 }
 
     .footer-div a:hover {
@@ -189,32 +203,24 @@ body {
 .index-display {
     font-family: 'Ingrid Darling', cursive;
     font-family: 'Oswald', sans-serif;
-    font-size: 4.2rem;
+    font-size: 4rem;
+    margin:auto;
+    margin:2rem 0 2rem 0;
+    text-align: center;
     color: white;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
-.index-img {
-    position: absolute;
-    top: 10rem;
-    z-index:-1;
-    left:0;
-    width: 100%;
-    height: 50rem;
-    background-image: url(/Images/background.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 .main-page {
     width: 100%;
     margin: auto;
-    margin-top: 10rem;
+    margin-top: 1rem;
 }
 
 .box-container {
-    display: block;
+    display: flex;
+    justify-content: center;
     margin: auto;
-    margin-left: 3rem;
 }
 
 .box-wrapper {
@@ -224,19 +230,20 @@ body {
 .main-buttons {
     font-size: 1.3rem;
     border: none;
+    margin-left: 2rem;
     cursor: pointer;
     border-radius: 5px;
     color: black;
+    font-weight: 500;
     background-color: #90D0FC;
     padding: 0.4rem;
     width: 16.4rem;
     height: 3.1rem;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease 0s;
 }
 
     .main-buttons:hover {
-        background-color: #7DC36F;
         transform: translateY(-7px);
     }
 
@@ -252,7 +259,7 @@ body {
     font-family: 'Ingrid Darling', cursive;
     font-family: 'Oswald', sans-serif;
     font-size: 1.6rem;
-    margin-left: 0.8rem;
+    text-align: center;
 }
 
 .page-header {
@@ -262,6 +269,7 @@ body {
 }
 
 .page-content {
+
     text-align: left;
 }
 /*Login page*/
@@ -365,37 +373,44 @@ body {
 
 .card {
     border: 1px solid black;
-    background-color: #999999;
     border-radius: 10px;
     color: black;
+    height:330px;
 }
 
     .card .card-body {
-        height: 200px;
+        padding-left: 1rem;
+        position: relative;
         line-height: 1.5rem;
-        font-weight: 600;
+        font-weight: 400;
+        font-family: "Ubuntu",sans-serif;
     }
 
     .card .card-img {
-        height: 330px;
+        height: 200px;
         border-radius: 10px;
         vertical-align: bottom;
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Do not repeat the image */
         background-size: cover; /* Resize the background image to cover the entire container */
     }
+    .card p{
+        margin:0;
+        display:flex;
+    }
 
 .card-body h4 {
+    margin:0;
     text-align:left;
-    font-weight:bold;
+    font-weight:600;
     font-size:1.3rem;
-    margin-left:.4rem;
 }
 .view-button {
+    margin:0;
     font-size: 1.2rem;
     color: white;
     border: none;
-    width: 8rem;
+    width: 5rem;
     background-color: #7DC36F;
     height: 2.5rem;
     margin-top: 1rem;

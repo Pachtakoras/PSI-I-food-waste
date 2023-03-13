@@ -9,7 +9,6 @@
     <div class="index-img">
     </div>
     <div class="page-content">
-        <h1 class="index-display">Welcome to the food saving app!</h1>
         <h2 class="index-display">Save more, waste less!</h2>
         @*<p class="index-display desc">Our main goal is to provide people with opportunity to sell or give away old products.</p>*@
         <div class="box-container">
@@ -17,14 +16,15 @@
                 <p class="btn-description">View list of discounted products</p>
                 <form method="post" asp-page-handler="Person">
                     <button class="main-buttons">Products</button>
+                    <button class="main-buttons" asp-page="/Forms/CreatedRestaurants">Sign up</button>
                 </form>
             </div>
-            <div class=box-wrapper>
+           @* <div class=box-wrapper>
                 <p class="btn-description">Register now!</p>
                 <form>
                     <button class="main-buttons" asp-page="/Forms/CreatedRestaurants">Sign up</button>
                 </form>
-            </div>
+            </div*> *@
         </div>
     </div>
 </div>
