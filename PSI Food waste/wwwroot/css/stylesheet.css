@@ -13,7 +13,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;*/
-    background-color: #F6F6F6;
     background-attachment: fixed;
     line-height: 1.6em;
     font-size: 16px;
@@ -24,16 +23,19 @@ body {
 }
 
 .index-img {
+    margin: auto;
+    overflow: hidden;
+    background-image: url(/Images/hero-image.jpg);
     position: absolute;
     top: 5rem;
-    z-index:-1;
-    left:0;
+    left: 0;
+    z-index: -1;
     width: 100%;
-    height: 60rem;
-    background-image: url(/Images/hero-image.jpg);
-    background-position: center;
+    height: 94vh;
+    background-position: top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    margin-bottom: -10rem;
 }
 
 .container {
@@ -78,7 +80,19 @@ body {
     align-items: center;
 }
 
-@media (max-width:800px) {
+
+@media only screen and (max-width:1150px) {
+    #product-grid {
+        grid-column: unset;
+        margin: 1rem 0 1rem 0;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 35vw 35vw;
+        gap: 2rem 2rem;
+    }
+}
+
+@media only screen and (max-width:900px) {
     .nav-container, .navbar-links, .main-header {
         display: flex;
         flex-direction: column;
@@ -92,7 +106,32 @@ body {
         align-self: center;
         margin: auto;
     }
+
+    #product-grid {
+        grid-column: unset;
+        margin: 1rem 0 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .card {
+        box-sizing: border-box;
+        width: 50vw;
+        height: 50vw;
+    }
+
+        .card .card-img {
+            height: 25vw;
+        }
+
+        .card .card-body {
+            font-size:2vw;
+        }
 }
+
+
 
 .navbar-links ul {
     display: flex;
@@ -189,7 +228,7 @@ body {
     min-height: 5rem;
     --tw-bg-opacity: 1;
     bottom: 0;
-    background-color: #e5e5ef;
+    background-color: #F6F6F6;
 }
 
 .footer-div, .footer-div a {
@@ -204,8 +243,8 @@ body {
     font-family: 'Ingrid Darling', cursive;
     font-family: 'Oswald', sans-serif;
     font-size: 4rem;
-    margin:auto;
-    margin:2rem 0 2rem 0;
+    margin: auto;
+    margin: 2rem 0 2rem 0;
     text-align: center;
     color: white;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
@@ -224,7 +263,6 @@ body {
 }
 
 .box-wrapper {
-   
 }
 
 .main-buttons {
@@ -269,7 +307,6 @@ body {
 }
 
 .page-content {
-
     text-align: left;
 }
 /*Login page*/
@@ -285,6 +322,7 @@ body {
     border-radius: 16px;
     padding: 2rem;
     margin-top: 8rem;
+    box-shadow: 0px 0px 4px 1px grey;
 }
 
     .login-form p {
@@ -343,17 +381,16 @@ body {
 
 .confirm-buttom {
     font-size: 1.5rem;
-    color: black;
+    color: white;
     border: none;
     width: 100%;
-    background-color: #90D0FC;
+    background-color: #62CDFF;
     height: 2.5rem;
     margin-top: 1rem;
     cursor: pointer;
 }
 
     .confirm-buttom:hover {
-        
     }
 
 .form-group {
@@ -365,56 +402,66 @@ body {
 }
 /*RestaurantList page*/
 .card-columns {
-    margin-top: 1rem;
+    margin: 1rem 0 1rem 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2.5rem;
+    justify-content: center;
+    grid-template-columns: 330px 330px 330px;
+    gap: 2rem 2rem;
 }
 
 .card {
-    border: 1px solid black;
-    border-radius: 10px;
     color: black;
-    height:330px;
+    max-height: 320px;
 }
 
-    .card .card-body {
-        padding-left: 1rem;
-        position: relative;
-        line-height: 1.5rem;
-        font-weight: 400;
-        font-family: "Ubuntu",sans-serif;
-    }
+.card-body {
+    box-shadow:0px 0px 5px 1px grey;
+    border-radius: 5px;
+    display: flex;
+    justify-content:space-between;
+    position: relative;
+    line-height: 1.5rem;
+    font-weight: 400;
+    font-family: "Ubuntu",sans-serif;
+    height:86px;
+}
+.card-text{
+    margin: 0.5rem 0 0.8rem 0.9rem;
+}
 
-    .card .card-img {
-        height: 200px;
-        border-radius: 10px;
-        vertical-align: bottom;
-        background-position: center; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        background-size: cover; /* Resize the background image to cover the entire container */
-    }
-    .card p{
-        margin:0;
-        display:flex;
-    }
+.card-img {
+    height: 200px;
+    box-shadow: 0px 0px 2px 1px grey;
+    border-radius: 4px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.card p {
+    margin: 0;
+    display: flex;
+}
 
 .card-body h4 {
-    margin:0;
-    text-align:left;
-    font-weight:600;
-    font-size:1.3rem;
+    margin: 0;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.btn-group {
+    align-self:center;
 }
 .view-button {
-    margin:0;
+    margin: 0 1rem 0 0;
     font-size: 1.2rem;
     color: white;
     border: none;
-    width: 5rem;
+    width: 4rem;
     background-color: #7DC36F;
     height: 2.5rem;
-    margin-top: 1rem;
-    margin:auto;
     cursor: pointer;
-    border-radius:5px;
+    border-radius: 5px;
 }
