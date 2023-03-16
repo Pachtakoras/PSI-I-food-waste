@@ -3,9 +3,7 @@
 @model PSI_Food_waste.Pages.Forms.RestaurantProductsModel
 @{
 }
-<h1>@Model.restaurant.Title</h1></>
-
-<h2>Available products</h2>
+<h2 class="page-heading">@Model.restaurant.Title</h2></>
 <form class="search" method="post">
     @*<label asp-for="searchCriteria">product name: </label>*@
     <input type="text" class="search-bar" placeholder="What are you looking for?" asp-for="searchCriteria" />

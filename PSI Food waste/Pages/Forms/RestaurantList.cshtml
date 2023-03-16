@@ -2,10 +2,9 @@
 @model PSI_Food_waste.Pages.Forms.RestaurantListModel
 @{
 }
-<h2>Restaurants available</h2>
+<h2 class="page-heading">Restaurants available</h2>
 
-<form method="post" asp-page-handler="Filter">
-    <label asp-for="SearchByCity">Select City: </label>
+<form class="filter" method="post" asp-page-handler="Filter">
     <select style="width:100px;"
             name="SearchByCity" id="SearchByCity">
         <option value="None">None</option>
@@ -15,7 +14,7 @@
         <option value="Panevežys">Panevežys</option>
         <option value="Šiauliai">Šiauliai</option>
     </select>
-    <button class="btn btn-primary">Filter</button>
+    <button class="filter-btn"><i class="fa-sharp fa-solid fa-filter"></i></button>
 </form>
 
 @{

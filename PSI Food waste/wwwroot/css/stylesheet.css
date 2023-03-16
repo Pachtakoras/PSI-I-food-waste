@@ -92,44 +92,6 @@ body {
     }
 }
 
-@media only screen and (max-width:900px) {
-    .nav-container, .navbar-links, .main-header {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        margin: auto;
-        justify-content: center;
-    }
-
-    #main-logo {
-        margin: auto;
-        align-self: center;
-        margin: auto;
-    }
-
-    #product-grid {
-        grid-column: unset;
-        margin: 1rem 0 1rem 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: auto;
-    }
-
-    .card {
-        box-sizing: border-box;
-        width: 50vw;
-        height: 50vw;
-    }
-
-        .card .card-img {
-            height: 25vw;
-        }
-
-        .card .card-body {
-            font-size: 2vw;
-        }
-}
 
 
 
@@ -462,7 +424,7 @@ body {
     color: white;
     border: none;
     width: 4rem;
-    background-color: #7DC36F;
+    background-color: #90D0FC;
     height: 2.5rem;
     cursor: pointer;
     border-radius: 5px;
@@ -535,4 +497,77 @@ body {
 .product-desc{
     display:flex;
     flex-direction:column;
+}
+
+
+
+@media only screen and (max-width:1050px) {
+    .nav-container, .navbar-links, .main-header {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+        justify-content: center;
+    }
+
+    .index-img {
+        top: 10.5rem;
+    }
+
+    #main-logo {
+        margin: auto;
+        align-self: center;
+        margin: auto;
+    }
+
+    #product-grid {
+        grid-column: unset;
+        margin: 1rem 0 1rem 0;
+        display: flex;
+        gap: .7rem;
+        flex-direction: column;
+        align-content:center;
+        align-items:center;
+        justify-content: center;
+    }
+
+    .card {
+        box-sizing: border-box;
+        width: 50vw;
+        height: 50vw;
+    }
+
+        .card .card-img {
+            height: 25vw;
+        }
+
+        .card .card-body {
+            font-size: 2vw;
+        }
+}
+.filter{
+    display:flex;
+    justify-content:flex-end;
+}
+#SearchByCity {
+    background-color: dodgerblue;
+    color: white;
+    height: 1.6rem;
+    border: none;
+    width: 4rem;
+    border-radius: 5px;
+}
+.filter-btn{
+    background:none;
+    border:none;
+    box-shadow: 0 0 1px 1px grey;
+    border-radius: 4px;
+    height:1.6rem;
+    width: 1.4rem;
+}
+
+.page-heading{
+    font-size: 2rem;
+    font-weight:900;
+    text-align:center;
 }
