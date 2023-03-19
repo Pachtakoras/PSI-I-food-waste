@@ -549,6 +549,9 @@ body {
     display:flex;
     justify-content:flex-end;
 }
+.search{
+    justify-content: center;
+}
 #SearchByCity {
     background-color: dodgerblue;
     color: white;
