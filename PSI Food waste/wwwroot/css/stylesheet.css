@@ -9,10 +9,6 @@
 body {
     position: relative;
     font-family: 'Lato', Helvetica, sans-serif;
-    /*background-image: linear-gradient(0deg, rgba(188,255,189,0.2),rgba(147,130,240,0.5)),url('https://www.teahub.io/photos/full/41-419298_background-image-for-restaurant-website.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;*/
     background-attachment: fixed;
     line-height: 1.6em;
     font-size: 16px;
@@ -22,26 +18,55 @@ body {
     min-height: 100vh;
 }
 
-.index-img {
+.main-page {
     margin: auto;
+    background-image: url(/Images/hero-image.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 326px;
+    overflow: hidden;
+}
+
+.restaurant-list-page {
+    margin: auto;
+    max-width: 80%;
+}
+
+.restaurant-link {
+    cursor: pointer;
+    text-decoration: none;
+    transition: 250ms ease-in; 
+}
+
+    .restaurant-link:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+
+.products-page {
+    width: 68%;
+    margin: auto;
+}
+
+.index-img {
+    /*  margin: auto;
     overflow: hidden;
     background-image: url(/Images/hero-image.jpg);
-    position: absolute;
     top: 5rem;
     left: 0;
     z-index: -1;
-    min-width: 100%;
+    width: 100%;
     height: 70vw;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: -10rem;
+    margin-bottom: -10rem;*/
 }
 
 .container {
-    display: flex;
-    min-height: 60rem;
-    width: 100%;
+    max-width: 100%;
+    min-height: inherit;
     align-content: center;
     justify-content: center;
 }
@@ -58,7 +83,8 @@ body {
     /*background-color: #C9EEAB;*/
     box-sizing: border-box;
     border-bottom: 1px solid #bab7b7;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 29px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 1px 4px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 1px 4px 0px;
 }
 
 #main-logo {
@@ -92,8 +118,13 @@ body {
     }
 }
 
+@media only screen and (min-width: 450px) {
 
-
+    .main-page {
+        height: 68vw;
+        background-image: url(/Images/hero-image.jpg);
+    }
+}
 
 .navbar-links ul {
     display: flex;
@@ -209,14 +240,9 @@ body {
     margin: 2rem 0 2rem 0;
     text-align: center;
     color: #333;
-    
 }
 
-.main-page {
-    width: 100%;
-    margin: auto;
-    margin-top: 5rem;
-}
+
 
 .box-container {
     display: flex;
@@ -270,6 +296,7 @@ body {
 
 .page-content {
     text-align: left;
+    margin-top: 5rem;
 }
 /*Login page*/
 .login-form {
@@ -367,7 +394,7 @@ body {
     margin: 1rem 0 1rem 0;
     display: grid;
     justify-content: center;
-    grid-template-columns: 330px 330px 330px;
+    grid-template-columns: 430px 430px 430px;
     gap: 2rem 2rem;
 }
 
@@ -377,8 +404,8 @@ body {
 }
 
 .card-body {
-    box-shadow: 0px 0px 5px 1px grey;
-    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 0.125rem 0px, rgba(0, 0, 0, 0.12) 0px 0.125rem 0.125rem 0px;
+    border-radius: 0 0 5px 5px;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -386,17 +413,17 @@ body {
     font-weight: 400;
     font-family: "Ubuntu",sans-serif;
     height: 86px;
-    background-color:white;
+    background-color: white;
 }
 
 .card-text {
+    font-size: 1rem;
+    color:black;
     margin: 0.5rem 0 0.8rem 0.9rem;
 }
 
 .card-img {
     height: 200px;
-    box-shadow: 0px 0px 2px 1px grey;
-    border-radius: 4px;
     vertical-align: bottom;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -412,7 +439,7 @@ body {
     margin: 0;
     text-align: left;
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .btn-group {
@@ -478,7 +505,8 @@ body {
     border-radius: 1.2rem;
     box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.2);
 }
-    .product-item  * {
+
+    .product-item * {
         margin: 0;
     }
 
@@ -486,33 +514,32 @@ body {
     font-size: 2rem;
     font-weight: 700;
 }
-.product-prices{
-    display:flex;
+
+.product-prices {
+    display: flex;
     align-items: center;
     flex-direction: column;
 }
-.product-discounted{
+
+.product-discounted {
     font-size: 2rem;
     font-weight: 600;
 }
-.product-desc{
-    display:flex;
-    flex-direction:column;
+
+.product-desc {
+    display: flex;
+    flex-direction: column;
 }
 
 
 
-@media only screen and (max-width:1050px) {
+@media only screen and (max-width:850px) {
     .nav-container, .navbar-links, .main-header {
         display: flex;
         flex-direction: column;
         text-align: center;
         margin: auto;
         justify-content: center;
-    }
-
-    .index-img {
-        top: 10.5rem;
     }
 
     #main-logo {
@@ -527,32 +554,35 @@ body {
         display: flex;
         gap: .7rem;
         flex-direction: column;
-        align-content:center;
-        align-items:center;
+        align-content: center;
+        align-items: center;
         justify-content: center;
     }
 
     .card {
         box-sizing: border-box;
-        width: 50vw;
-        height: 50vw;
+        width: 40vw;
+        height: 45vw;
     }
 
         .card .card-img {
-            height: 25vw;
+            height: 20vw;
         }
 
         .card .card-body {
             font-size: 2vw;
         }
 }
-.filter{
-    display:flex;
-    justify-content:flex-end;
-}
-.search{
+
+.filter {
+    display: flex;
     justify-content: center;
 }
+
+.search {
+    justify-content: center;
+}
+
 #SearchByCity {
     background-color: dodgerblue;
     color: white;
@@ -561,17 +591,18 @@ body {
     width: 4rem;
     border-radius: 5px;
 }
-.filter-btn{
-    background:none;
-    border:none;
+
+.filter-btn {
+    background: none;
+    border: none;
     box-shadow: 0 0 1px 1px grey;
     border-radius: 4px;
-    height:1.6rem;
+    height: 1.6rem;
     width: 1.4rem;
 }
 
-.page-heading{
+.page-heading {
     font-size: 2rem;
-    font-weight:900;
-    text-align:center;
+    font-weight: 900;
+    text-align: center;
 }
