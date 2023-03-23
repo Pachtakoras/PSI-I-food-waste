@@ -24,29 +24,22 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 326px;
     overflow: hidden;
 }
 
 .restaurant-list-page {
-    
 }
 
 .restaurant-link {
     cursor: pointer;
     text-decoration: none;
-    transition: 250ms ease-in; 
+    transition: 250ms ease-in;
 }
 
     .restaurant-link:hover {
         cursor: pointer;
         transform: scale(1.05);
     }
-
-.products-page {
-    width: 68%;
-    margin: auto;
-}
 
 .index-img {
     /*  margin: auto;
@@ -68,10 +61,12 @@ body {
     min-height: inherit;
     align-content: center;
     justify-content: center;
+    background-color: #FAFAFA;
 }
 
     .container .pb-3 {
         min-width: 70%;
+        position:relative;
     }
 
 .main-header {
@@ -86,7 +81,7 @@ body {
     align-items: center;
     gap: 2rem;
     margin: auto;
-    padding: 1rem 2rem 0 2rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
 }
 
 #main-logo {
@@ -299,6 +294,9 @@ body {
     margin-top: 5rem;
 }
 /*Login page*/
+.credentials-page{
+    padding-top: 7rem;
+}
 .login-form {
     margin: auto;
     max-width: 26rem;
@@ -310,7 +308,6 @@ body {
     text-align: center;
     border-radius: 16px;
     padding: 2rem;
-    margin-top: 8rem;
     box-shadow: 0px 0px 4px 1px grey;
 }
 
@@ -406,6 +403,7 @@ body {
     margin: auto;
     padding: 1rem 2rem;
 }
+
 .card-columns {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -429,18 +427,20 @@ body {
     font-family: "Ubuntu",sans-serif;
     min-height: 90px;
     background-color: white;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .card-text {
     font-size: 1rem;
-    color:black;
+    color: black;
     margin: 0.5rem 0 0.8rem 0.9rem;
 }
-.card-label{
+
+.card-label {
     color: #333;
     opacity: .8;
 }
+
 .card-img {
     height: 230px;
     border-radius: 9px 9px 0 0;
@@ -480,10 +480,27 @@ body {
 
 
 /*Restaurant product pages*/
+.products-page {
+    max-width: 90%;
+    margin: auto;
+}
+
+
+.restaurant-header-img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 400px;
+    aspect-ratio: auto;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
 .search {
     width: 100%;
     position: relative;
     display: flex;
+    justify-content: center;
 }
 
 .search-bar {
@@ -509,21 +526,24 @@ body {
 
 .products-list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 1.3rem;
+    padding: 1rem 0;
 }
 
 .product-item {
-    padding: 1rem;
     display: flex;
-    font-size: 1.2rem;
-    max-width: 80%;
     justify-content: space-between;
+    gap: 1rem;
+    max-width: 550px;
+    max-height: 250px;
+    padding: 1rem;
+    font-size: 1.2rem;
     align-items: center;
-    background-color: #90D0FC;
-    opacity: 0.8;
+    background-color: white;
     border-radius: 1.2rem;
-    box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
     .product-item * {
@@ -531,24 +551,47 @@ body {
     }
 
 .product-title {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    font-weight: 900;
+    padding: .1rem 0 .4rem;
+}
+
+.product-img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 9px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .product-prices {
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    text-align: left;
+    gap: 1rem;
+    font-size: 1rem;
 }
 
 .product-discounted {
-    font-size: 2rem;
     font-weight: 600;
 }
 
-.product-desc {
-    display: flex;
-    flex-direction: column;
+.product-old-price {
+    font-size: 0.9rem;
+}
+
+.glutten-free {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.product-description {
+    text-align: left;
+    font-size: 1rem;
+    color: grey;
+    line-height: 1.1rem;
+    opacity: .9;
+    padding-bottom: .5rem;
 }
 
 
@@ -575,29 +618,39 @@ body {
         gap: .7rem;
         padding: 0.6rem;
     }
-    .card{
+
+    .card {
         max-width: 630px;
-        margin:auto;
+        margin: auto;
     }
+
     .main-header {
         gap: 0;
-        padding:0;
+        padding: 0;
     }
-    .navbar-links ul{
-        padding:0;
-         margin:0;
-         
+
+    .navbar-links ul {
+        padding: 0;
+        margin: 0;
     }
-    
 }
+
+@media only screen and (max-width:500px) {
+    .product-description {
+        display: none;
+    }
+
+    .product-img {
+    }
+}
+
 @media only screen and (max-width:390px) {
     .restaurant-list-page-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
-        padding:0 1.2rem;
+        padding: 0 1.2rem;
     }
-}
 
     .filter {
         display: flex;
@@ -608,27 +661,29 @@ body {
         justify-content: center;
     }
 
-    #SearchByCity {
-        background-color: dodgerblue;
-        color: white;
-        height: 1.6rem;
-        border: none;
-        width: 4rem;
-        border-radius: 5px;
-    }
+   
+}
+.filter-btn {
+    background: none;
+    border: none;
+    box-shadow: 0 0 1px 1px grey;
+    border-radius: 4px;
+    height: 1.6rem;
+    width: 1.4rem;
+}
 
-    .filter-btn {
-        background: none;
-        border: none;
-        box-shadow: 0 0 1px 1px grey;
-        border-radius: 4px;
-        height: 1.6rem;
-        width: 1.4rem;
-    }
-
-    .page-heading {
-        font-size: 2rem;
-        font-weight: 900;
-        text-align: left;
-        margin: 1rem 0;
-    }
+.page-heading {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: left;
+    margin:0;
+    padding: 1rem 0;
+}
+#SearchByCity {
+    background-color: dodgerblue;
+    color: white;
+    height: 1.6rem;
+    border: none;
+    width: 4rem;
+    border-radius: 5px;
+}

@@ -3,84 +3,51 @@
 @model PSI_Food_waste.Pages.Forms.RestaurantProductsModel
 @{
 }
+<img class="restaurant-header-img" src="@Model.restaurant.PictureUrl">
 <div class="products-page">
-    <h2 class="page-heading">@Model.restaurant.Title</h2></>
+    <h2 class="page-heading">@Model.restaurant.Title</h2>
     <form class="search" method="post">
-        @*<label asp-for="searchCriteria">product name: </label>*@
         <input type="text" class="search-bar" placeholder="What are you looking for?" asp-for="searchCriteria" />
         <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
-
     </form>
-
-    <div>
-        <ul class="pagination">
-            @for (var i = 1; i <= Model.TotalPages; i++)
-            {
-                <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
-                    <a asp-page="/Forms/RestaurantProducts" asp-route-currentpage="@i" class="page-link">@i</a>
-                </li>
-            }
-        </ul>
-    </div>
     <div class="products-list">
-        @*<div>
-            <div>
-            <p scope="col">Name</p>
-            <p scope="col">Price</p>
-            <p scope="col">Discount size</p>
-            <p scope="col">Size</p>
-            <p scope="col">Gluten Free</p>
-            <p scope="col"></p>
-            </div>
-            </div>*@
-        @*@foreach (var product in Model.products)
-            {
-            <tr>
-            <td>@product.Name</td>
-            <td>@($"{product.Price:C}")</td>
-            <td>@product.Size</td>
-            <td>@Model.GlutenFreeText(product)</td>
-            </tr>
-            }*@
         @{
             if (!string.IsNullOrWhiteSpace(value: Model.searchCriteria))
             {
                 var query = from Models.Product product in Model.products
-                            where product.Name.ToLower().Contains(value: Model.searchCriteria)
+                            where product.Name.ToLower().Contains(value: Model.searchCriteria.ToLower())
                             select product;
                 int queryCount = query.Count();
                 Model.Count = queryCount;
                 var data = query.ToList();
                 data = await Model._productRepository.GetPaginatedResult(data, Model.CurrentPage, Model.PageSize);
-                //query.any
-                //var enumerator = object.iterator();
-                //while (enumerator.kazkoksmetodas.next())
-                //    {
-                //        enumerator.get
-                //    }
+
                 if (queryCount != 0)
                 {
-                    foreach (var rez in data)
+                    foreach (var product in data)
                     {
                         <div class="product-item">
-                            <p class="product-title">@rez.Name</p>
-                            <p><strike style="color:red">@($"{rez.Price:C}")</strike>     @($"{rez.DiscountedPrice:C}") </p>
-                            <p>@($"{(rez.Discount/100d):P0}")</p>
-                            <p>@Model.GlutenFreeText(rez)</p>
+                            <div class="product-desc">
+                                <p class="product-title">@product.Name  (@product.Size)</p>
+                                <p class="product-description">@product.Description</p>
+                                <div class="product-prices">
+                                    <div>
+                                        <p class="product-discounted">@($"{product.DiscountedPrice:C}") </p>
+                                        <p class="product-old-price"> <strike style="color:red">@($"{product.Price:C}")</strike></p>
+                                    </div>
+                                    <div>
+                                        <p class="glutten-free">@Model.GlutenFreeText(product)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="product-img" src="@product.PictureUrl" alt="Picture here">
                         </div>
                     }
-
-                    <p>results found: @Model.Count</p>
                 }
 
                 else
                 {
-                    <tr>
-                        <td>no results</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
+                    <h2>No results</h2>
                 }
             }
 
@@ -89,24 +56,26 @@
                 foreach (var product in Model.Data)
                 {
                     <div class="product-item">
-                        <p class="product-title">@product.Name</p>
                         <div class="product-desc">
-                            <p>@product.Size</p>
-                            <p>@Model.GlutenFreeText(product)</p>
-                            <p>@($"{(product.Discount/100d):P0}")</p>
+                            <p class="product-title">@product.Name  (@product.Size)</p>
+                            <p class="product-description">@product.Description</p>
+                            <div class="product-prices">
+                                <div>
+                                    <p class="product-discounted">@($"{product.DiscountedPrice:C}") </p>
+                                    <p class="product-old-price"> <strike style="color:red">@($"{product.Price:C}")</strike></p>
+                                </div>
+                                <div>
+                                    <p class="glutten-free">@Model.GlutenFreeText(product)</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="product-prices">
-                            <p class="product-discounted">@($"{product.DiscountedPrice:C}") </p>
-                            <p><strike style="color:red">@($"{product.Price:C}")</strike></p>
-                        </div>
-
-
+                        <img class="product-img" src="@product.PictureUrl" alt="Picture here">
                     </div>
                 }
             }
         }
     </div>
-    <div style="width:100px; margin:1 auto;">
+    <div style="width:100px; margin:1; auto;">
         <ul class="pagination">
             @if (Model.ShowPrevious)
             {

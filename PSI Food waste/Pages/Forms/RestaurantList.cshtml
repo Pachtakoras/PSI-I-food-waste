@@ -4,29 +4,30 @@
 }
 <div class="restaurant-list-page">
     <div class="restaurant-list-page-header">
-    <h2 class="page-heading">Restaurants available</h2>
+        <h2 class="page-heading">Restaurants available</h2>
 
-    <form class="filter" method="post" asp-page-handler="Filter">
-        <select style="width:100px;"
-                name="SearchByCity" id="SearchByCity">
-            <option value="None">None</option>
-            <option value="Vilnius">Vilnius</option>
-            <option value="Kaunas">Kaunas</option>
-            <option value="Klaipeda">Klaipeda</option>
-            <option value="Panevežys">Panevežys</option>
-            <option value="Šiauliai">Šiauliai</option>
-        </select>
-        <button class="filter-btn"><i class="fa-sharp fa-solid fa-filter"></i></button>
-    </form>
+        <form class="filter" method="post" asp-page-handler="Filter">
+            <select style="width:100px;"
+                    name="SearchByCity" id="SearchByCity">
+                <option selected disabled>City</option>
+                <option value="None">None</option>
+                <option value="Vilnius">Vilnius</option>
+                <option value="Kaunas">Kaunas</option>
+                <option value="Klaipeda">Klaipeda</option>
+                <option value="Panevežys">Panevežys</option>
+                <option value="Šiauliai">Šiauliai</option>
+            </select>
+            <button class="filter-btn"><i class="fa-sharp fa-solid fa-filter"></i></button>
+        </form>
     </div>
 
     @{
         var productsWithRestaurant = Model.products.Join(Model.restaurants,
         p => p.RestId,
         r => r.Id,
-        (p, r) => new { p.Name, r.Title, r.Id, r.PictureUrl,r.Adress, p.DiscountedPrice, p.Price, p.Discount });
+        (p, r) => new { p.Name, r.Title, r.Id, r.PictureUrl, r.Adress, p.DiscountedPrice, p.Price, p.Discount });
 
-        var productsByRestaurant = productsWithRestaurant.GroupBy(p => new { p.Title, p.PictureUrl, p.Id, p.Adress});
+        var productsByRestaurant = productsWithRestaurant.GroupBy(p => new { p.Title, p.PictureUrl, p.Id, p.Adress });
     }
 
     <div id="product-grid" class="card-columns">

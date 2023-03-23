@@ -29,6 +29,10 @@ namespace PSI_Food_waste.Models
         [Range(0, 100)]
         public int Discount { get; set; }
 
+        public string PictureUrl { get; set; }
+
+        public string Description { get; set; }
+
         //public int CompareTo(object obj) => Price.CompareTo(obj);
         public int CompareTo(object obj)
         {

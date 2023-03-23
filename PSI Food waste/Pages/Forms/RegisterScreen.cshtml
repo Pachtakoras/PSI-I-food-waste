@@ -3,75 +3,40 @@
 @model PSI_Food_waste.Pages.Forms.RegisterScreenModel
 @{
 }
-
-<div class="login-form login">
-    <h1 class="page-header">Register</h1>
-    <p>Already a member? <a asp-page="/Forms/LoginScreen">Sign in now!</a></p>
-    <form class="form" method="post" autocomplete="off">
-        <div class="form-group">
-            <div class="input">
-                <i class="fa fa-envelope icon"></i>
-                <input type="Email" asp-for="Email" class="form-control" placeholder="Email" autocomplete="false">
+<div class="credentials-page">
+    <div class="login-form login">
+        <h1 class="page-header">Register</h1>
+        <p>Already a member? <a asp-page="/Forms/LoginScreen">Sign in now!</a></p>
+        <form class="form" method="post" autocomplete="off">
+            <div class="form-group">
+                <div class="input">
+                    <i class="fa fa-envelope icon"></i>
+                    <input type="Email" asp-for="Email" class="form-control" placeholder="Email" autocomplete="false">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="input">
-                <i class="fa fa-user icon"></i>
-                <input type="text" asp-for="Name" class="form-control" placeholder="User Name" autocomplete="false">
+            <div class="form-group">
+                <div class="input">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" asp-for="Name" class="form-control" placeholder="User Name" autocomplete="false">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="input">
-                <i class="fa fa-lock icon"></i>
-                <input type="password" asp-for="Pass" class="form-control" placeholder="Password" autocomplete="false">
+            <div class="form-group">
+                <div class="input">
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" asp-for="Pass" class="form-control" placeholder="Password" autocomplete="false">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="input">
-                <i class="fa fa-heart icon"></i>
-                <input type="number" asp-for="Num" class="form-control" placeholder="Favorite number" autocomplete="false">
+            <div class="form-group">
+                <div class="input">
+                    <i class="fa fa-heart icon"></i>
+                    <input type="number" asp-for="Num" class="form-control" placeholder="Favorite number" autocomplete="false">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="confirm-buttom">Confirm</button>
-            <label style="color:red">@Model.ErrorMsg</label>
-            <label style="color:green">@Model.Msg</label>
-        </div>
-    </form>
+            <div class="form-group">
+                <button type="submit" class="confirm-buttom">Confirm</button>
+                <label style="color:red">@Model.ErrorMsg</label>
+                <label style="color:green">@Model.Msg</label>
+            </div>
+        </form>
+    </div>
 </div>
-
-@{
-    @*<p>@Model.RegisteredUsers[0]</p>
-        <p>test</p>
-        <p>@Model.Name</p>*@
-    @*<p>@Model.RegisteredUsers[0].Username.Equals(null)</p>
-        <p>@(Model.RegisteredUsers[1].Username != null)</p>*@
-    //<h4>users:</h4>
-    //<table class="table mt-5">
-    //    <thead>
-    //        <tr>
-    //            <th scope="col">Username</th>
-    //            <th scope="col">Password</th>
-    //            <th scope="col">Favourite number</th>
-    //        </tr>
-    //    </thead>
-    //    @for (int i = 0; i < Model.RegisteredUsers.Length(); ++i)
-    //    {
-    //        if (Model.RegisteredUsers[i].Username != null)
-    //        {
-    //            <tr>
-    //                <td>@Model.RegisteredUsers[i].Username</td>
-    //                <td>@Model.RegisteredUsers[i].Password</td>
-    //                <td>@Model.RegisteredUsers[i].FavNum</td>
-    //            </tr>
-    //        }
-    //    }
-    //</table>
-    @*<p>@Model.RegisteredUsers[0].Username</p>
-        <p>test @Model.RegisteredUsers[1].Username</p>*@
-    @*if (!Model.RegisteredUsers[0].Equals(null))
-        {
-        <label>@Model.RegisteredUsers[0].Username @Model.RegisteredUsers[0].Password</label>
-        <label>@Model.RegisteredUser.Username</label>
-        }*@
-}

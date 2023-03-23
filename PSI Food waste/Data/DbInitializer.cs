@@ -22,12 +22,12 @@ namespace PSI_Food_waste.Data
 
             var products = new Product[]
             {
-                new Product{RestId = guid, Name = "Margarita", Size=ProductSize.Small, IsGlutenFree = false, Price = 10, DiscountedPrice = 5, Discount = 50},
-                new Product{RestId = guid, Name = "Italiska", Size=ProductSize.Small, IsGlutenFree = false, Price = 10, DiscountedPrice = 5, Discount = 50},
-                new Product{RestId = guid, Name = "Havaju", Size=ProductSize.Small, IsGlutenFree = false, Price = 10, DiscountedPrice = 5, Discount = 50},
-                new Product{RestId = guid2, Name = "Burger", Size=ProductSize.Small, IsGlutenFree = false, Price = 10, DiscountedPrice = 5, Discount = 50},
-                new Product{RestId = guid2, Name = "Fries", Size=ProductSize.Small, IsGlutenFree = false, Price = 10, DiscountedPrice = 5, Discount = 50},
-                new Product{RestId = guid2, Name = "Big burger", Size=ProductSize.Small, IsGlutenFree = false, Price = 10, DiscountedPrice = 5, Discount = 50}
+                new Product{RestId = guid, Name = "Margarita", Size=ProductSize.Small, IsGlutenFree = false, Price = 10, DiscountedPrice = 5, Discount = 50,Description="Kvietinių miltų paplotėlis, pesto padažas, mozzarella, baltieji svogūnai, artišokai, žalios alyvuogės, saulėje džiovinti pomidorai, Džiugo sūris, česnakinis aliejus", PictureUrl = "https://www.lamaistas.lt/uploads/modules/recipes/without-watermark/29238.jpg"},
+                new Product{RestId = guid, Name = "Italiska", Size=ProductSize.Small, IsGlutenFree = false, Price = 10, DiscountedPrice = 5, Discount = 50,Description="Kvietinių miltų paplotėlis, pesto padažas, mozzarella, baltieji svogūnai, artišokai, žalios alyvuogės, saulėje džiovinti pomidorai, Džiugo sūris, česnakinis aliejus", PictureUrl = "https://www.lamaistas.lt/uploads/modules/recipes/without-watermark/29238.jpg"},
+                new Product{RestId = guid, Name = "Havaju", Size=ProductSize.Small, IsGlutenFree = false, Price = 10, DiscountedPrice = 5, Discount = 50,Description="Kvietinių miltų paplotėlis, pesto padažas, mozzarella, baltieji svogūnai, artišokai, žalios alyvuogės, saulėje džiovinti pomidorai, Džiugo sūris, česnakinis aliejus", PictureUrl = "https://www.lamaistas.lt/uploads/modules/recipes/without-watermark/29238.jpg"},
+                new Product{RestId = guid2, Name = "Burger", Size=ProductSize.Small, IsGlutenFree = false, Price = 10, DiscountedPrice = 5, Discount = 50,Description="Kvietinių miltų paplotėlis, pesto padažas, mozzarella, baltieji svogūnai, artišokai, žalios alyvuogės, saulėje džiovinti pomidorai, Džiugo sūris, česnakinis aliejus", PictureUrl = "https://www.lamaistas.lt/uploads/modules/recipes/without-watermark/29238.jpg"},
+                new Product{RestId = guid2, Name = "Fries", Size=ProductSize.Small, IsGlutenFree = false, Price = 10, DiscountedPrice = 5, Discount = 50,Description="Kvietinių miltų paplotėlis, pesto padažas, mozzarella, baltieji svogūnai, artišokai, žalios alyvuogės, saulėje džiovinti pomidorai, Džiugo sūris, česnakinis aliejus", PictureUrl = "https://www.lamaistas.lt/uploads/modules/recipes/without-watermark/29238.jpg"},
+                new Product{RestId = guid2, Name = "Big burger", Size=ProductSize.Small, IsGlutenFree = false, Price = 10, DiscountedPrice = 5, Discount = 50,Description="Kvietinių miltų paplotėlis, pesto padažas, mozzarella, baltieji svogūnai, artišokai, žalios alyvuogės, saulėje džiovinti pomidorai, Džiugo sūris, česnakinis aliejus", PictureUrl = "https://www.lamaistas.lt/uploads/modules/recipes/without-watermark/29238.jpg"}
             };
 
             context.Products.AddRange(products);
