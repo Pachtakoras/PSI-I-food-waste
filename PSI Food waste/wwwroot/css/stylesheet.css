@@ -391,10 +391,10 @@ body {
 }
 /*RestaurantList page*/
 .card-columns {
-    margin: 1rem 0 1rem 0;
     display: grid;
     justify-content: center;
-    grid-template-columns: 430px 430px 430px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0.8rem 0 0.8rem 0;
     gap: 2rem 2rem;
 }
 
@@ -412,7 +412,7 @@ body {
     line-height: 1.5rem;
     font-weight: 400;
     font-family: "Ubuntu",sans-serif;
-    height: 86px;
+    min-height: 86px;
     background-color: white;
 }
 
@@ -423,7 +423,7 @@ body {
 }
 
 .card-img {
-    height: 200px;
+    height: 230px;
     vertical-align: bottom;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -549,8 +549,8 @@ body {
     }
 
     #product-grid {
-        grid-column: unset;
-        margin: 1rem 0 1rem 0;
+        grid-column: 1 fr;
+        margin: 0.2rem 0 0.2rem 0;
         display: flex;
         gap: .7rem;
         flex-direction: column;
@@ -558,16 +558,6 @@ body {
         align-items: center;
         justify-content: center;
     }
-
-    .card {
-        box-sizing: border-box;
-        width: 40vw;
-        height: 45vw;
-    }
-
-        .card .card-img {
-            height: 20vw;
-        }
 
         .card .card-body {
             font-size: 2vw;
