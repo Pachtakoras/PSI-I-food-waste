@@ -29,8 +29,7 @@ body {
 }
 
 .restaurant-list-page {
-    margin: auto;
-    max-width: 80%;
+    
 }
 
 .restaurant-link {
@@ -78,26 +77,26 @@ body {
 .main-header {
     display: flex;
     justify-content: space-between;
-    margin: 0;
     min-height: 5rem;
     /*background-color: #C9EEAB;*/
     box-sizing: border-box;
     border-bottom: 1px solid #bab7b7;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 1px 4px 0px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 1px 4px 0px;
+    align-items: center;
+    gap: 2rem;
+    margin: auto;
+    padding: 1rem 2rem 0 2rem;
 }
 
 #main-logo {
-    margin: auto;
     align-self: center;
-    margin-left: 10rem;
 }
 
 #navbar {
     font-size: 1.2rem;
     color: black;
     min-width: 50%;
-    margin: auto;
 }
 
 .nav-container {
@@ -110,11 +109,11 @@ body {
 @media only screen and (max-width:1150px) {
     #product-grid {
         grid-column: unset;
-        margin: 1rem 0 1rem 0;
+        margin: 0.5rem 0 0.5rem 0;
         display: grid;
         justify-content: center;
-        grid-template-columns: 35vw 35vw;
-        gap: 2rem 2rem;
+        grid-template-columns: 50% 50%;
+        gap: 1rem 1rem;
     }
 }
 
@@ -175,6 +174,7 @@ body {
     }
 
 .nav-buttons {
+    font-size: 1.2rem;
     position: relative;
     width: 20rem;
     height: 3.5rem;
@@ -303,7 +303,7 @@ body {
     margin: auto;
     max-width: 26rem;
     /*width: 35%;*/
-    height: 24rem;
+    min-height: 24rem;
     border: 1px #DCDFE3 solid;
     background: white;
     background-color: white;
@@ -390,9 +390,24 @@ body {
     height: 31rem;
 }
 /*RestaurantList page*/
+
+.restaurant-list-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1600px;
+    margin: auto;
+    padding: 1rem 2rem 0 2rem;
+}
+
+#product-grid {
+    max-width: 1600px;
+    margin: auto;
+    padding: 1rem 2rem;
+}
 .card-columns {
     display: grid;
-    justify-content: center;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0.8rem 0 0.8rem 0;
     gap: 2rem 2rem;
@@ -400,7 +415,7 @@ body {
 
 .card {
     color: black;
-    max-height: 320px;
+    min-height: 320px;
 }
 
 .card-body {
@@ -412,8 +427,9 @@ body {
     line-height: 1.5rem;
     font-weight: 400;
     font-family: "Ubuntu",sans-serif;
-    min-height: 86px;
+    min-height: 90px;
     background-color: white;
+    overflow:hidden;
 }
 
 .card-text {
@@ -421,9 +437,13 @@ body {
     color:black;
     margin: 0.5rem 0 0.8rem 0.9rem;
 }
-
+.card-label{
+    color: #333;
+    opacity: .8;
+}
 .card-img {
     height: 230px;
+    border-radius: 9px 9px 0 0;
     vertical-align: bottom;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -452,8 +472,8 @@ body {
     color: white;
     border: none;
     width: 4rem;
-    background-color: #90D0FC;
-    height: 2.5rem;
+    background-color: rgba(36,160,237,0.9);
+    min-height: 2.5rem;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -533,7 +553,7 @@ body {
 
 
 
-@media only screen and (max-width:850px) {
+@media only screen and (max-width:740px) {
     .nav-container, .navbar-links, .main-header {
         display: flex;
         flex-direction: column;
@@ -549,50 +569,66 @@ body {
     }
 
     #product-grid {
-        grid-column: 1 fr;
+        display: grid;
+        grid-template-columns: 95%;
         margin: 0.2rem 0 0.2rem 0;
-        display: flex;
         gap: .7rem;
+        padding: 0.6rem;
+    }
+    .card{
+        max-width: 630px;
+        margin:auto;
+    }
+    .main-header {
+        gap: 0;
+        padding:0;
+    }
+    .navbar-links ul{
+        padding:0;
+         margin:0;
+         
+    }
+    
+}
+@media only screen and (max-width:390px) {
+    .restaurant-list-page-header {
         flex-direction: column;
-        align-content: center;
-        align-items: center;
+        align-items: flex-start;
+        gap: 0;
+        padding:0 1.2rem;
+    }
+}
+
+    .filter {
+        display: flex;
         justify-content: center;
     }
 
-        .card .card-body {
-            font-size: 2vw;
-        }
-}
+    .search {
+        justify-content: center;
+    }
 
-.filter {
-    display: flex;
-    justify-content: center;
-}
+    #SearchByCity {
+        background-color: dodgerblue;
+        color: white;
+        height: 1.6rem;
+        border: none;
+        width: 4rem;
+        border-radius: 5px;
+    }
 
-.search {
-    justify-content: center;
-}
+    .filter-btn {
+        background: none;
+        border: none;
+        box-shadow: 0 0 1px 1px grey;
+        border-radius: 4px;
+        height: 1.6rem;
+        width: 1.4rem;
+    }
 
-#SearchByCity {
-    background-color: dodgerblue;
-    color: white;
-    height: 1.6rem;
-    border: none;
-    width: 4rem;
-    border-radius: 5px;
-}
-
-.filter-btn {
-    background: none;
-    border: none;
-    box-shadow: 0 0 1px 1px grey;
-    border-radius: 4px;
-    height: 1.6rem;
-    width: 1.4rem;
-}
-
-.page-heading {
-    font-size: 2rem;
-    font-weight: 900;
-    text-align: center;
-}
+    .page-heading {
+        font-size: 2rem;
+        font-weight: 900;
+        text-align: left;
+        margin: 1rem 0;
+    }

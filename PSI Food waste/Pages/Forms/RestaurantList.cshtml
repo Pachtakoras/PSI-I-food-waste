@@ -3,6 +3,7 @@
 @{
 }
 <div class="restaurant-list-page">
+    <div class="restaurant-list-page-header">
     <h2 class="page-heading">Restaurants available</h2>
 
     <form class="filter" method="post" asp-page-handler="Filter">
@@ -17,6 +18,7 @@
         </select>
         <button class="filter-btn"><i class="fa-sharp fa-solid fa-filter"></i></button>
     </form>
+    </div>
 
     @{
         var productsWithRestaurant = Model.products.Join(Model.restaurants,
@@ -45,8 +47,8 @@
                             @foreach (var product in productGroup.Take(2))
                             {
                                 <p></p>
-                                <label class="col-sm-7">@product.Name</label>
-                                <label style="color:red;">-@product.Discount%</label>
+                                <label class="card-label">@product.Name</label>
+                                <label class="card-label" style="color:red;">-@product.Discount%</label>
                             }
                         </div>
                         <div class="btn-group">
