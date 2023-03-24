@@ -6,8 +6,8 @@
     box-sizing: border-box;
 }
 
-h1,h2,h3{
-    margin:0;
+h1, h2, h3 {
+    margin: 0;
 }
 
 body {
@@ -69,7 +69,7 @@ body {
 
     .container .pb-3 {
         min-width: 70%;
-        position:relative;
+        position: relative;
     }
 
 .main-header {
@@ -297,14 +297,15 @@ body {
     margin-top: 5rem;
 }
 /*Login page*/
-.credentials-page{
+.credentials-page {
     padding-top: 7rem;
 }
+
 .login-form {
     margin: auto;
     max-width: 26rem;
     /*width: 35%;*/
-    min-height: 24rem;
+    min-height: 20rem;
     border: 1px #DCDFE3 solid;
     background: white;
     background-color: white;
@@ -383,7 +384,7 @@ body {
     }
 
 .form-group {
-    margin-top: .15rem;
+    margin-top: .12rem;
 }
 
 .login {
@@ -496,9 +497,9 @@ body {
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-    background-image:linear-gradient(0deg, rgba(17,17,27,0.9),rgba(17,17,17,0.9));
+    background-image: linear-gradient(0deg, rgba(17,17,27,0.9),rgba(17,17,17,0.9));
 }
-    
+
 .search {
     width: 100%;
     position: relative;
@@ -663,9 +664,8 @@ body {
     .search {
         justify-content: center;
     }
-
-   
 }
+
 .filter-btn {
     background: none;
     border: none;
@@ -679,9 +679,10 @@ body {
     font-size: 2rem;
     font-weight: 900;
     text-align: left;
-    margin:0;
+    margin: 0;
     padding: 1rem 0;
 }
+
 #SearchByCity {
     background-color: dodgerblue;
     color: white;
@@ -689,4 +690,92 @@ body {
     border: none;
     width: 4rem;
     border-radius: 5px;
+}
+
+
+/*Created restaurants page*/
+.add-restaurant-btn {
+    background-color: rgba(36,160,237,0.9);
+    font-size: 1.2rem;
+    min-height: 2.5rem;
+    min-width: 4rem;
+    color: white;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.created-restaurants-page {
+    max-width: 90%;
+    margin: auto;
+}
+
+.restaurants-card {
+    position:relative;
+    max-width: 500px;
+    max-height: 180px;
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+    margin: 1rem 0;
+}
+.restaurant-description{
+    display: flex;
+    flex-direction: column;
+}
+.restaurant-description > *{
+    margin: .5rem;
+    line-height: .5rem;
+}
+.restaurant-content {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+.edit-restaurant-button {
+    background-color: rgba(36,160,237,0.9);
+    font-size:1.2rem;
+    min-height: 2.5rem;
+    color:white;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.button-container{
+    position:absolute;
+    align-self:center;
+    right:1rem;
+    justify-content: center;
+}
+
+.restaurant-content img {
+    max-width: 100%;
+    width: 180px;
+    aspect-ratio: auto;
+    border-radius: 9px 0 0 9px;
+    object-fit: cover;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+@media only screen and (max-width:450px) {
+    .restaurant-content {
+        flex-direction: column;
+    }
+
+    .button-container {
+        bottom: 1rem;
+        align-self: end;
+    }
+
+    .restaurants-card {
+        max-width: 300px;
+    }
+
+    .restaurant-content img {
+        width: 100%;
+        height: 100px;
+        border-radius: 9px 9px 0 0;
+    }
 }

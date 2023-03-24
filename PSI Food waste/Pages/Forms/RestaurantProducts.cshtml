@@ -6,6 +6,7 @@
 <img class="restaurant-header-img" src="@Model.restaurant.PictureUrl">
 <div class="products-page">
     <h2 class="page-heading">@Model.restaurant.Title</h2>
+    <h3>@Model.restaurant.Adress</h3>
     <form class="search" method="post">
         <input type="text" class="search-bar" placeholder="What are you looking for?" asp-for="searchCriteria" />
         <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
