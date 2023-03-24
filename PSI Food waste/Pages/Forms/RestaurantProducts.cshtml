@@ -62,7 +62,7 @@
                             <div class="product-prices">
                                 <div>
                                     <p class="product-discounted">@($"{product.DiscountedPrice:C}") </p>
-                                    <p class="product-old-price"> <strike style="color:red">@($"{product.Price:C}")</strike></p>
+                                    <p class="product-old-price"> <strike style="color:grey; opacity:0.7">@($"{product.Price:C}")</strike></p>
                                 </div>
                                 <div>
                                     <p class="glutten-free">@Model.GlutenFreeText(product)</p>
@@ -75,7 +75,7 @@
             }
         }
     </div>
-    <div style="width:100px; margin:1; auto;">
+    <div style="width:100px">
         <ul class="pagination">
             @if (Model.ShowPrevious)
             {

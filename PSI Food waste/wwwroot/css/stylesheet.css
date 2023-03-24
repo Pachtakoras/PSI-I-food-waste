@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+h1,h2,h3{
+    margin:0;
+}
+
 body {
     position: relative;
     font-family: 'Lato', Helvetica, sans-serif;
@@ -57,7 +61,6 @@ body {
 }
 
 .container {
-    max-width: 100%;
     min-height: inherit;
     align-content: center;
     justify-content: center;
@@ -212,7 +215,7 @@ body {
     align-items: flex-end;
     text-align: center;
     justify-content: center;
-    width: 100%;
+    max-width: 100%;
     min-height: 5rem;
     --tw-bg-opacity: 1;
     bottom: 0;
@@ -384,7 +387,7 @@ body {
 }
 
 .login {
-    height: 31rem;
+    max-height: 31rem;
 }
 /*RestaurantList page*/
 
@@ -490,12 +493,12 @@ body {
     width: 100%;
     object-fit: cover;
     max-height: 400px;
-    aspect-ratio: auto;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
+    background-image:linear-gradient(0deg, rgba(17,17,27,0.9),rgba(17,17,17,0.9));
 }
-
+    
 .search {
     width: 100%;
     position: relative;
