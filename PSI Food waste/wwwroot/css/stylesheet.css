@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
 @import url('https://fonts.googleapis.com/css2?family=Ingrid+Darling&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ingrid+Darling&family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 
 * {
     box-sizing: border-box;
@@ -13,6 +15,7 @@ h1, h2, h3 {
 body {
     position: relative;
     font-family: 'Lato', Helvetica, sans-serif;
+    font-family: 'Roboto Slab', serif;
     background-attachment: fixed;
     line-height: 1.6em;
     font-size: 16px;
@@ -125,6 +128,8 @@ body {
 
 .navbar-links ul {
     display: flex;
+    gap:1.3rem;
+    align-items:center;
     list-style: none;
     text-decoration: none;
     color: black;
@@ -136,7 +141,6 @@ body {
         position: relative;
         text-decoration: none;
         color: black;
-        margin-right: 1.5rem;
     }
 
         .navbar-links ul a:hover {
@@ -183,7 +187,8 @@ body {
 }
 
     .nav-buttons #username {
-        margin-right: 2rem;
+        margin-right: 1rem;
+        max-width: 5rem;
     }
 
     .nav-buttons button {
@@ -240,7 +245,9 @@ body {
     color: #333;
 }
 
-
+.flex-item {
+    display: flex;
+}
 
 .box-container {
     display: flex;
@@ -428,7 +435,6 @@ body {
     position: relative;
     line-height: 1.5rem;
     font-weight: 400;
-    font-family: "Ubuntu",sans-serif;
     min-height: 90px;
     background-color: white;
     overflow: hidden;
@@ -541,6 +547,7 @@ body {
     gap: 1rem;
     max-width: 100%;
     width: 550px;
+    max-height: 195px;
     padding: 1rem;
     font-size: 1.2rem;
     align-items: center;
@@ -590,11 +597,13 @@ body {
     font-weight: 600;
     font-size: 0.9rem;
 }
-.product-desc{
-    padding:0;
-    margin:0;
-    top:0;
+
+.product-desc {
+    padding: 0;
+    margin: 0;
+    top: 0;
 }
+
 .product-description {
     text-align: left;
     font-size: 1rem;
@@ -672,6 +681,19 @@ body {
     }
 }
 
+@media only screen and (max-width:850px) {
+    .form-wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .product-display-wrapper {
+        align-self: flex-start;
+    }
+}
+
+
 .filter-btn {
     background: none;
     border: none;
@@ -710,13 +732,14 @@ body {
     border-radius: .5rem;
     cursor: pointer;
 }
+
 .created-restaurants-page {
     max-width: 90%;
     margin: auto;
 }
 
 .restaurants-card {
-    position:relative;
+    position: relative;
     max-width: 500px;
     max-height: 180px;
     display: flex;
@@ -725,32 +748,37 @@ body {
     border-radius: 9px;
     margin: 1rem 0;
 }
-.restaurant-description{
+
+.restaurant-description {
     display: flex;
     flex-direction: column;
 }
-.restaurant-description > *{
-    margin: .5rem;
-    line-height: .5rem;
-}
+
+    .restaurant-description > * {
+        margin: .5rem;
+        line-height: .5rem;
+    }
+
 .restaurant-content {
     width: 100%;
     display: flex;
     overflow: hidden;
 }
+
 .edit-restaurant-button {
     background-color: rgba(36,160,237,0.9);
-    font-size:1.2rem;
+    font-size: 1.2rem;
     min-height: 2.5rem;
-    color:white;
+    color: white;
     border: none;
     border-radius: .5rem;
     cursor: pointer;
 }
-.button-container{
-    position:absolute;
-    align-self:center;
-    right:1rem;
+
+.button-container {
+    position: absolute;
+    align-self: center;
+    right: 1rem;
     justify-content: center;
 }
 
@@ -764,6 +792,185 @@ body {
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
 }
+
+
+
+/*Restaurant edit page*/
+
+.Restaurant-edit-page h1 {
+    margin-left: 2rem;
+}
+.form-wrapper {
+    display: flex;
+    margin: 2rem;
+    width:80%;
+    gap: 2rem;
+}
+
+.product-form-wrapper {
+    max-width: 100%;
+    width: 450px;
+    background: rgba(36,160,237,0.5);
+    border-radius: 9px;
+    box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+::placeholder {
+    font-family: 'Lato', Helvetica, sans-serif;
+    font-size: .8rem;
+    opacity: 1;
+    text-transform: capitalize;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    padding: .2rem 1rem;
+}
+
+    .form-element > label {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding-bottom: .2rem;
+    }
+
+    .form-element textarea {
+        width: 100%;
+        max-height: 130px;
+        border-radius: 5px;
+        resize: vertical;
+        font-size: .8rem;
+        overflow-y:auto;
+    }
+
+    .form-element input, select, textarea {
+        min-height: 1.6rem;
+        font-size: .8rem;
+        border: none;
+        border-radius: 5px;
+    }
+
+        .form-element input, select, textarea:focus {
+            outline: none;
+        }
+
+            .form-element select, select::after {
+                font-family: 'Lato', Helvetica, sans-serif;
+                font-size: .8rem;
+                opacity: 1;
+                color: rgba(0, 0, 0, 0.5);
+                font-weight: 600;
+            }
+.form-header {
+    font-family: 'Roboto Slab', serif;
+    color:white;
+    font-weight:500;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#checkbox-input {
+    display: flex;
+    flex-direction: row;
+}
+
+    #checkbox-input label {
+        margin-right: .3rem;
+    }
+
+    #checkbox-input input {
+        transform: scale(1.3)
+    }
+
+.product-form-item {
+    max-width: 50%;
+}
+
+.add-btn {
+    font-size: 1.3rem;
+    color: white;
+    border: none;
+    width: 95%;
+    background-color: #439952;
+    margin: 1rem auto;
+    padding: 0.2rem 1rem;
+    height: 2.3rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product-display-wrapper {
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-display {
+    position: relative;
+    max-width: 100%;
+    width: 300px;
+    height:110px;
+    display: flex;
+    justify-content: flex-start;
+    max-height: 110px;
+    line-height: 1.2rem;
+    box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+}
+
+    .product-display img {
+        max-width: 100%;
+        width: 140px;
+        max-height: 110px;
+        border-radius: 9px 0 0 9px;
+        object-fit: cover;
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover;
+    }
+
+    .product-display * {
+        margin: 0;
+    }
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-weight: 400;
+    opacity: .7;
+}
+
+.manage-product-btns {
+    display: flex;
+    gap: .2rem;
+    flex-direction: column;
+    position: absolute;
+    align-self: center;
+    right: .5rem;
+}
+
+.edit {
+    width: 100%;
+    max-width: 3rem;
+    font-size: .8rem;
+    min-height: 1.8rem;
+    font-weight: 600;
+}
+
+    .edit:hover {
+        opacity: .9;
+    }
+
+.btn-red {
+    background-color: #d83737;
+}
+
 
 @media only screen and (max-width:450px) {
     .restaurant-content {
@@ -783,5 +990,11 @@ body {
         width: 100%;
         height: 100px;
         border-radius: 9px 9px 0 0;
+    }
+
+    .form-wrapper {
+        width: 100%;
+        padding: .5rem;
+        margin:auto
     }
 }
