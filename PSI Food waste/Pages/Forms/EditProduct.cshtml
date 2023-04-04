@@ -5,66 +5,71 @@
     ViewData["Title"] = "EditProduct";
 }
 
+<div class="edit-product-page form-wrapper">
+    <div class="product-form-wrapper">
+        <div class="product-form">
+            <h3 class="form-header" style="margin-top:.7rem;">Edit product</h3>
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Product.PrID" />
+                <div class="form-element">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Product.PrID" />
+                </div>
+                <div class="form-element">
+                    <label asp-for="Product.RestId" class="control-label"></label>
+                    <input readonly asp-for="Product.RestId" />
+                    <span asp-validation-for="Product.RestId" class="text-danger"></span>
+                </div>
+                <div class="form-element">
+                    <label asp-for="Product.Name" class="control-label"></label>
+                    <input asp-for="Product.Name" />
+                    <span asp-validation-for="Product.Name" class="text-danger"></span>
+                </div>
+                <div class="form-element">
+                    <label asp-for="Product.Size" class="control-label"></label>
+                    <select asp-for="Product.Size" asp-items="Html.GetEnumSelectList<ProductSize>()"></select>
+                    <span asp-validation-for="Product.Size" class="text-danger"></span>
+                </div>
+                <div class="form-element">
+                    <label asp-for="Product.Price" class="control-label"></label>
+                    <input asp-for="Product.Price" />
+                    <span asp-validation-for="Product.Price" class="text-danger"></span>
+                </div>
+                <div class="form-element">
+                    <label asp-for="Product.DiscountedPrice" class="control-label"></label>
+                    <input readonly asp-for="Product.DiscountedPrice" />
+                    <span asp-validation-for="Product.DiscountedPrice" class="text-danger"></span>
+                </div>
+                <div class="form-element">
+                    <label asp-for="Product.Discount" class="control-label"></label>
+                    <input asp-for="Product.Discount" />
+                    <span asp-validation-for="Product.Discount" class="text-danger"></span>
+                </div>
+                <div class="form-element">
+                    <label asp-for="Product.PictureUrl" class="control-label"></label>
+                    <input asp-for="Product.PictureUrl" />
+                    <span asp-validation-for="Product.PictureUrl" class="text-danger"></span>
+                </div>
+                <div class="form-element flex-item" style="flex-direction:row;">
+                    <label asp-for="Product.IsGlutenFree" class="control-label">Gluten free</label>
+                    <input id="form-check-input" asp-for="Product.IsGlutenFree" />
+                </div>
 
-<h1>Edit</h1>
-<h4>Product</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Product.PrID" />
-            <div class="form-group">
-                <label asp-for="Product.RestId" class="control-label"></label>
-                <input readonly asp-for="Product.RestId" class="form-control" />
-                <span asp-validation-for="Product.RestId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Product.Name" class="control-label"></label>
-                <input asp-for="Product.Name" class="form-control" />
-                <span asp-validation-for="Product.Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Product.Size" class="control-label"></label>
-                <select asp-for="Product.Size" asp-items="Html.GetEnumSelectList<ProductSize>()" class="form-control"></select>
-                <span asp-validation-for="Product.Size" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Product.IsGlutenFree" /> @Html.DisplayNameFor(model => model.Product.IsGlutenFree)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Product.Price" class="control-label"></label>
-                <input asp-for="Product.Price" class="form-control" />
-                <span asp-validation-for="Product.Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Product.DiscountedPrice" class="control-label"></label>
-                <input readonly asp-for="Product.DiscountedPrice" class="form-control" />
-                <span asp-validation-for="Product.DiscountedPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Product.Discount" class="control-label"></label>
-                <input asp-for="Product.Discount" class="form-control" />
-                <span asp-validation-for="Product.Discount" class="text-danger"></span>
-            </div>
-            <div cass="form-group">
-                <label asp-for="Product.PictureUrl" class="control-label"></label>
-                <input asp-for="Product.PictureUrl" class="form-control" />
-                <span asp-validation-for="Product.PictureUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+                <div class="grid-center">
+                    <button class="add-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-page="./RestaurantVerified" asp-route-id="@Model.Product.RestId">Back to List</a>
     </div>
 </div>
 
-<div>
-    <a asp-page="./RestaurantVerified" asp-route-id="@Model.Product.RestId">Back to List</a>
-</div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
 }

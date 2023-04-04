@@ -122,7 +122,7 @@ namespace PSI_Food_waste.Pages.Forms
 
         public IActionResult OnPostEdit(int id)
         {
-            return RedirectToPage("/Forms/EditProduct", "Get", id);
+            return RedirectToPage("/Forms/EditProduct","Get",new { ID = id });
         }
     }
     public class ProductArgs : EventArgs
